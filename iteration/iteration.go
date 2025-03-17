@@ -1,9 +1,11 @@
 package iteration
 
+import "strings"
+
 func Repeat(character string, times int) string {
-	var repeated string
+	var repeated strings.Builder
 	for i := 0; i < times; i++ {
-		repeated += character
+		repeated.WriteString(character) //minimizes memory copying 
 	}
-	return repeated
+	return repeated.String()
 }
